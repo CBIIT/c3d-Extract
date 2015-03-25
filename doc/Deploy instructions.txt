@@ -1,0 +1,44 @@
+Deplyoment of Data Extract Enhancement
+
+
+This Data Extract Ehancement consists of both an Oracle Forms web 
+and Oracle RDBMS alterations.
+
+General:
+1) Copy all files of the deployment to a single location.  This location will also be 
+   used when applying the Database changes.
+
+
+Web Deployment to Middle Tier Server:
+1) The new forms will need deployed.
+
+ 	Copy the files:
+
+	EXTSET01.FMB
+        EXTSET01.FMX
+        EXTSET02.FMB
+        EXTSET02.FMX
+
+	to:
+
+	D:\ncioraapps
+
+2) Optionally, the Service "OracleiSuitesHTTPServer" should be restarted on the Middle Tier
+   to ensure that the application is available.
+
+
+Orale RDBMS Alterations:
+1) As a DBA or Administrator, log into SQL*Plus, ensuring that the default directory is that
+   where the deployment SQL files are located.  Execute the script:
+
+	@install.sql
+
+   Check the file install_log.lst for any obvious errors.  
+
+
+DONE!
+
+
+
+
+

@@ -1,0 +1,87 @@
+<project name="CDELoaderUI" basedir="./" default="all">
+
+	<!-- Project settings -->
+	<property name="project.title" value="C3DDataExtract" />
+	<property name="project.war.file" value="c3ddataextract.war" />
+	<property name="dbscript.zip.file" value="c3ddataextractdbscripts.zip" />
+	<property name="deploy.zip.file" value="c3ddataextractdeploy.zip" />
+
+	<property name="src.dir" value="src/main" />
+	<property name="classes.dir" value="web/WEB-INF/classes" />
+	<property name="dist.dir" value="dist" />
+	
+	<path id="class.path">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="lib-ext">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+
+	<!-- Check timestamp on files -->
+	<target name="prepare">
+		<tstamp />
+		<copy file="${src.dir}/struts.xml" todir="${classes.dir}" />
+	</target>
+
+
+	<!-- Copy any resource or configuration files -->
+	<target name="resources">
+		<copy todir="${classes.dir}" includeEmptyDirs="no">
+			<fileset dir="${src.dir}">
+				<patternset>
+					<include name="**/*.conf" />
+					<include name="**/*.properties" />
+					<include name="**/*.xml" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy todir="web/WEB-INF/lib" includeEmptyDirs="no">
+			<fileset dir="lib">
+				<patternset>
+					<include name="**/*.jar" />
+				</patternset>
+			</fileset>
+		</copy>
+	</target>
+
+
+	<!-- Normal build of application -->
+	<target name="compile" depends="prepare,resources">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="lines,vars,source" includeantruntime="false">
+			<classpath refid="class.path" />
+		</javac>
+	</target>
+
+
+	<!-- Remove classes directory for clean build -->
+	<target name="clean" description="Prepare for clean build">
+		<delete dir="${classes.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<delete dir="web/WEB-INF/lib" />
+		<mkdir dir="web/WEB-INF/lib" />
+	</target>
+
+
+	<!-- Build entire project -->
+	<target name="project" depends="clean, prepare, compile, dist" />
+
+
+	<!-- Create binary distribution -->
+	<target name="dist" description="Create binary distribution">
+
+		<delete dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}" />
+
+		<war basedir="web/" warfile="${dist.dir}/${project.war.file}" webxml="web/WEB-INF/web.xml"> 
+		</war>
+
+	</target>
+
+
+	<!-- Build project and create distribution-->
+	<target name="all" depends="project" />
+
+</project>

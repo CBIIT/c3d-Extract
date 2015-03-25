@@ -1,0 +1,90 @@
+Add New Study
+
+[NOTE: X - Passed Test; N - Failed; M - Possible Failure]
+
+Validation Testing
+	
+	No values picked, hit create button	X - All appropriate validate errors occur
+	Good Study, others not picked		X - All appropriate validate errors occur
+	Good Studies, other not picked		X - All appropriate validate errors occur
+	Good Studies,Report to, others not	X - All appropriate validate errors occur
+	Only Reportas and MRN blank		X - All appropriate validate errors occur
+	Only MRN blank				X - All appropriate validate errors occur
+	Various combinations of good/bad	X - All appropriate validate errors occur
+
+NOTE: When selecting study previous created, but deleted, the astericks is removed correctly
+	
+	
+
+Initial Creation
+
+	Cursor Code Copied		N - might have blanked out when REFRESH occurred
+	File Control Recs Created	N - might have blanked out when REFRESH occurred
+	OC Object Recs Created		X
+	Study Control Recs Created	X
+	Report Control Recs Created	M - MRN_INST_CD not copied, need to check
+	View Code Copied		X
+		Spot check view code	X
+	_EXT schema created		X
+	_EXT views created		X
+	_EXT Lab Table created		X
+	_EXT Synonyms Created		X
+
+supplemental checking, 
+
+1) Delete all data, schema NOT removed
+
+	DELETE Cursor Code		N/A didn't exist
+	DELETE File Control Recs 	N/A didn't exist
+	DELETE OC Object Recs 		Y
+	DELETE Study Control Recs 	Y
+	DELETE Report Control Recs 	Y
+	DELETE View Code 		Y
+	DELETE _EXT schema created	N/A
+	DELETE _EXT views 		Y
+	DELETE _EXT Lab Table 		Y
+	DELETE _EXT Synonyms 		Y
+
+2) Recreate study using Add New Study
+
+NOTE1: During recreation, noticed that large status field was NOT spanning entier table width
+FIXD1: Corrected <p> max-width
+
+NOTE2: Messages in Large Status Window appear AFTER step completes. Nothing denotes what is CURRENTLY happening
+FIXD2: Added additional messages.
+
+	Cursor Code Copied		N
+	File Control Recs Created	N
+	OC Object Recs Created		Y
+	Study Control Recs Created	Y
+	Report Control Recs Created	M - MRN_INST_CD not copied, need to check
+	View Code Copied		Y
+		Check CTS_PTID_VW for MRNCode Substitution		X - 'CCR' target not found
+		Check CT_RECIEVED_DCMS_VW for studyId Substitution	N - FAILED Sustitution (Reported)
+	_EXT schema created		N/A
+	_EXT views created		Y - Some invalid, but compiled fine
+	_EXT Lab Table created		Y
+	_EXT Synonyms Created		Y
+
+Found Bug causing Cursors and File Controls to NOT be copied.  FIXED
+
+Ran Again
+
+	Cursor Code Copied		Y
+	File Control Recs Created	Y
+	OC Object Recs Created		Y
+	Study Control Recs Created	Y
+	Report Control Recs Created	M - MRN_INST_CD not copied, need to check
+	View Code Copied		Y
+		Check CTS_PTID_VW for MRNCode Substitution		X - 'CCR' target not found
+		Check CT_RECIEVED_DCMS_VW for studyId Substitution	N - FAILED Sustitution (Reported)
+	_EXT schema created		N/A
+	_EXT views created		Y
+	_EXT Lab Table created		Y
+	_EXT Synonyms Created		Y
+
+MRN_INST_CD is NOT copied so, not a bug in Web App (same thing happens on OForms)
+
+
+
+Testing Result: SUCCESS

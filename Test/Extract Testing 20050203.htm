@@ -1,0 +1,2992 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Extract%20Testing%2020050203_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="./Extract%20Testing%2020050203_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Extract Journaling Testing</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Patrick Conrad</o:Author>
+  <o:LastAuthor>Patrick Conrad</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>5700</o:TotalTime>
+  <o:LastPrinted>2005-06-02T17:16:00Z</o:LastPrinted>
+  <o:Created>2005-06-06T16:13:00Z</o:Created>
+  <o:LastSaved>2005-06-06T16:13:00Z</o:LastSaved>
+  <o:Pages>14</o:Pages>
+  <o:Words>3128</o:Words>
+  <o:Characters>17832</o:Characters>
+  <o:Company>NCI</o:Company>
+  <o:Lines>148</o:Lines>
+  <o:Paragraphs>35</o:Paragraphs>
+  <o:CharactersWithSpaces>21898</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Courier;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:3 0 0 0 1 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+h2
+	{mso-style-next:"Body for Heading 2";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h3
+	{mso-style-next:"Body for Heading 3";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Times New Roman";}
+h5
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+h6
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	font-size:16.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:48.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:96.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	font-weight:bold;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:200%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.BodyforHeading2, li.BodyforHeading2, div.BodyforHeading2
+	{mso-style-name:"Body for Heading 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.BodyforHeading3, li.BodyforHeading3, div.BodyforHeading3
+	{mso-style-name:"Body for Heading 3";
+	mso-style-parent:"Body for Heading 2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-title-page:yes;
+	mso-header:url("./Extract%20Testing%2020050203_files/header.htm") h1;
+	mso-footer:url("./Extract%20Testing%2020050203_files/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:11.0in 8.5in;
+	mso-page-orientation:landscape;
+	margin:1.25in 1.0in 1.25in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-title-page:yes;
+	mso-header:url("./Extract%20Testing%2020050203_files/header.htm") h2;
+	mso-footer:url("./Extract%20Testing%2020050203_files/header.htm") f1;
+	mso-first-header:url("./Extract%20Testing%2020050203_files/header.htm") fh2;
+	mso-first-footer:url("./Extract%20Testing%2020050203_files/header.htm") ff2;
+	mso-paper-source:0;}
+div.Section2
+	{page:Section2;}
+@page Section3
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-title-page:yes;
+	mso-header:url("./Extract%20Testing%2020050203_files/header.htm") h2;
+	mso-footer:url("./Extract%20Testing%2020050203_files/header.htm") f1;
+	mso-first-header:url("./Extract%20Testing%2020050203_files/header.htm") fh2;
+	mso-first-footer:url("./Extract%20Testing%2020050203_files/header.htm") ff3;
+	mso-paper-source:0;}
+div.Section3
+	{page:Section3;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:125702787;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-914308112 67698705 67698713 67698689 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:117.0pt;
+	mso-level-number-position:left;
+	margin-left:117.0pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:132648992;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1746009950 67698713 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:290133355;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1480978946 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:455485783;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1078335296 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:520095103;
+	mso-list-type:hybrid;
+	mso-list-template-ids:742307082 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:551117065;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-740768464 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l5:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l6
+	{mso-list-id:551693795;
+	mso-list-type:hybrid;
+	mso-list-template-ids:253651310 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l6:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:691959666;
+	mso-list-type:hybrid;
+	mso-list-template-ids:952292030 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l7:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l8
+	{mso-list-id:788284954;
+	mso-list-type:hybrid;
+	mso-list-template-ids:477896476 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l8:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:863591859;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-703687248 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l9:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l10
+	{mso-list-id:883294359;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1245323924 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l10:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l11
+	{mso-list-id:963343224;
+	mso-list-type:hybrid;
+	mso-list-template-ids:726033444 67698713 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l11:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l12
+	{mso-list-id:1044214955;
+	mso-list-type:hybrid;
+	mso-list-template-ids:821088390 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l12:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l13
+	{mso-list-id:1070154015;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-914308112 67698689 67698713 67698689 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l13:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l13:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:.9in;
+	mso-level-number-position:left;
+	margin-left:.9in;
+	text-indent:-.25in;}
+@list l13:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:109.8pt;
+	mso-level-number-position:left;
+	margin-left:109.8pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l14
+	{mso-list-id:1215266286;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-712336966 1118725820 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l14:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l15
+	{mso-list-id:1239440590;
+	mso-list-type:hybrid;
+	mso-list-template-ids:462320692 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l15:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l16
+	{mso-list-id:1398626788;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2068168268 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l16:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l17
+	{mso-list-id:1637906365;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-914308112 -724903996 67698713 67698689 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l17:level1
+	{mso-level-tab-stop:1.1in;
+	mso-level-number-position:left;
+	margin-left:1.1in;
+	text-indent:-.25in;}
+@list l17:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.6in;
+	mso-level-number-position:left;
+	margin-left:1.6in;
+	text-indent:-.25in;}
+@list l17:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:160.2pt;
+	mso-level-number-position:left;
+	margin-left:160.2pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l18
+	{mso-list-id:1701011662;
+	mso-list-type:hybrid;
+	mso-list-template-ids:326792116 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l18:level1
+	{mso-level-tab-stop:.85in;
+	mso-level-number-position:left;
+	margin-left:.85in;
+	text-indent:-.25in;}
+@list l18:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.6in;
+	mso-level-number-position:left;
+	margin-left:1.6in;
+	text-indent:-.25in;}
+@list l18:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:2.1in;
+	mso-level-number-position:right;
+	margin-left:2.1in;
+	text-indent:-9.0pt;}
+@list l19
+	{mso-list-id:1744638047;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-914308112 67698689 67698713 67698689 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l19:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.35in;
+	mso-level-number-position:left;
+	margin-left:1.35in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l19:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l19:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:153.0pt;
+	mso-level-number-position:left;
+	margin-left:153.0pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l20
+	{mso-list-id:1840972018;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-873534542 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l20:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l21
+	{mso-list-id:1991862029;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1987899344 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l21:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l22
+	{mso-list-id:2000182990;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1048281058 1118725820 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l22:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l23
+	{mso-list-id:2028100217;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1507330024 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l23:level1
+	{mso-level-tab-stop:1.35in;
+	mso-level-number-position:left;
+	margin-left:1.35in;
+	text-indent:-.25in;}
+@list l24
+	{mso-list-id:2098750511;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1347219058 -724903996 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l24:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:113.25pt;
+ height:74.25pt'>
+ <v:imagedata src="./Extract%20Testing%2020050203_files/image001.png" o:title="NCI Logo"/>
+</v:shape><![endif]--><![if !vml]><img width=151 height=99
+src="./Extract%20Testing%2020050203_files/image002.jpg" v:shapes="_x0000_i1025"><![endif]></p>
+
+<h3><span style='font-weight:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h3>
+
+<h3><span style='font-weight:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h3>
+
+<h3><span style='font-weight:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h3>
+
+<p class=MsoTitle align=left style='text-align:left'><span style='font-size:
+14.0pt;mso-bidi-font-size:16.0pt;font-weight:normal'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoTitle>Data Extract Utility Testing</p>
+
+<p class=MsoSubtitle>Extract Journaling</p>
+
+<p class=MsoSubtitle>Ignored Updates</p>
+
+<p class=MsoSubtitle>Missing Delete Dates</p>
+
+<p class=MsoSubtitle>Miscellaneous</p>
+
+<p class=MsoTitle style='margin-top:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p class=MsoBodyText2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<b><u><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></u></b>
+
+<p class=MsoHeader><b><u>Data Extract Utility Testing <o:p></o:p></u></b></p>
+
+<p class=MsoNormal>Author: Patrick Conrad, Functional Expert, Ekagra
+Technologies, Ltd.</p>
+
+<h1><span style='text-decoration:none;text-underline:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<p class=MsoToc1>Table of Contents</p>
+
+<p class=MsoToc1 style='tab-stops:right dotted 431.5pt'><!--[if supportFields]><span
+style='mso-element:field-begin'></span><span style="mso-spacerun:
+yes"> </span>TOC \o &quot;3-5&quot; \h \z \t &quot;Heading 1,1,Heading
+2,2&quot; <span style='mso-element:field-separator'></span><![endif]--><span
+class=MsoHyperlink><a href="#_Toc95709020">Extract Utility Testing Enhancements<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709020 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320030000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709021">Extract Journaling<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709021 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320031000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709022">Summary of changes<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709022 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320032000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709023">Ignored Updates<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709023 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320033000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709024">Summary of changes<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709024 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>3</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320034000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709025">Delete Dates<span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709025 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320035000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709026">Summary of changes<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709026 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320036000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709027">Data Extract Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709027 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320037000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709028">Summary of changes<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709028 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320038000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709029">Refresh Extract View Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709029 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>4</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000320039000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc1 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709030">Testing Results<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709030 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>5</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330030000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709031">Journaling<span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709031 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>5</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330031000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709032">Ignored Updates<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709032 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>10</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330032000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709033">Scripts and Useful SQL<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709033 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>10</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330033000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709034">Delete Dates<span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709034 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>11</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330034000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc3 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709035">Scripts and Useful SQL<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709035 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>12</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330035000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709036">Data Extract Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709036 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>12</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330036000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709037">Refresh Extract View Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709037 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>13</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330037000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc1 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709038">Testing Summary<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709038 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330038000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709039">Extract Journaling<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709039 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000330039000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709040">Ignored Updates<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709040 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340030000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709041">Delete Dates<span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709041 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340031000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709042">Data Extract Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709042 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340032000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc2 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709043">Refresh Extract View Form<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>.. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709043 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340033000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc1 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709044">Deployment Recommendation<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709044 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340034000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc1 style='tab-stops:right dotted 431.5pt'><span
+class=MsoHyperlink><a href="#_Toc95709045">Additional Documents<span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span><!--[if supportFields]><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-element:field-begin'></span></span><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'> PAGEREF _Toc95709045 \h </span><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-separator'></span></span><![endif]--><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'>14</span><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000D0000005F0054006F006300390035003700300039003000340035000000</w:data>
+</xml><![endif]--></span><!--[if supportFields]><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-element:field-end'></span></span><![endif]--></a></span><o:p></o:p></p>
+
+<p class=MsoToc1><!--[if supportFields]><span style='mso-element:field-end'></span><![endif]--><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><u><span style='font-size:12.0pt;
+font-family:"Times New Roman";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span></u></b>
+
+<h1><a name="_Toc95709020">Extract Utility Testing Enhancements</a></h1>
+
+<p class=MsoNormal>This document supports the testing of the following
+enhancements/corrects to the Data Extract Utility.</p>
+
+<h2><a name="_Toc95709021">Extract Journaling</a></h2>
+
+<p class=BodyforHeading2>Enhancement that collects the changes made to Extract
+Cursors and Views and stores them in a journaling table.<span
+style="mso-spacerun: yes">  </span>Collects and stores a required comment from
+the user related to the change.</p>
+
+<p class=BodyforHeading2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc95709022">Summary of changes</a></h3>
+
+<p class=BodyforHeading3 style='margin-left:.85in;text-indent:-.25in;
+mso-list:l18 level1 lfo24;tab-stops:list .85in'><![if !supportLists]>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>The
+changes to both cursor and view screens</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Added
+new buttons Journal and Comment.</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Added
+new Journal screens to application.</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Added
+application menu to the cursor form (miscellaneous correction).</p>
+
+<p class=BodyforHeading3 style='margin-left:.85in;text-indent:-.25in;
+mso-list:l18 level1 lfo24;tab-stops:list .85in'><![if !supportLists]>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Changes
+to the existing process</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Updates
+to data on either the cursor or the view screens, require the user to add a
+comment.<span style="mso-spacerun: yes">  </span>Comment is saved with Journal.</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Deleting
+a record from either the cursor or the view screens requires the user to add a
+comment.<span style="mso-spacerun: yes">  </span>Comment is saved with Journal.</p>
+
+<p class=BodyforHeading3 style='margin-left:.85in;text-indent:-.25in;
+mso-list:l18 level1 lfo24;tab-stops:list .85in'><![if !supportLists]>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Journaling
+Screen</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Allows
+for viewing the journal information in separate window.</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Allows
+viewing of previous journal entries.</p>
+
+<p class=BodyforHeading3 style='margin-left:.85in;text-indent:-.25in;
+mso-list:l18 level1 lfo24;tab-stops:list .85in'><![if !supportLists]><span
+style='font-family:Arial'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Database changes<span style='font-family:Arial'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Added
+new column to cursor table NOTE<span style="mso-spacerun: yes">   
+</span>VARCHAR2(2000)</p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;font-family:"Courier New"'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Added new column to view table NOTE<span
+style="mso-spacerun: yes">    </span>VARCHAR2(2000)<span style='font-size:10.0pt;
+font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]><span
+style='mso-bidi-font-size:10.0pt;font-family:"Courier New"'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><![endif]>Created journaling
+table <span style='mso-bidi-font-size:10.0pt;font-family:"Courier New"'>CT_EXT_CRS_CTL$JN<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]><span
+style='font-family:Arial'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Created journaling table <span style='font-family:"Courier New"'>CT_EXT_VW_CTL$JN</span><span
+style='font-family:Arial'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]>e.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]>Added
+synonyms for the new journal tables </p>
+
+<p class=BodyforHeading3 style='margin-left:81.0pt;text-indent:-.25in;
+mso-list:l18 level2 lfo24;tab-stops:list 81.0pt'><![if !supportLists]><span
+style='mso-bidi-font-size:10.0pt'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Granted the INSERT privilege to the following roles:<span
+style='mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.35in'>EXTRACT_ADMIN</p>
+
+<p class=BodyforHeading3 style='margin-left:1.35in'>EXTRACT_EXECUTE</p>
+
+<p class=BodyforHeading3 style='margin-left:1.35in'>EXT_ROLE<span
+style='mso-bidi-font-size:10.0pt'><o:p></o:p></span></p>
+
+<h2><a name="_Toc95709023">Ignored Updates</a></h2>
+
+<p class=BodyforHeading2>This enhancement contains corrections that prevent the
+exclusion of partial records from an update transaction record.</p>
+
+<p class=BodyforHeading2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="OLE_LINK3"></a><a name="_Toc95709024"><span style='mso-bookmark:
+OLE_LINK3'>Summary of changes</span></a><span style='mso-bookmark:OLE_LINK3'></span></h3>
+
+<p class=BodyforHeading3><span style='mso-bookmark:OLE_LINK3'>For all
+non-delete records, the key for each record used to check the data of the last
+set of extract records.<span style="mso-spacerun: yes">  </span>If there is at
+least one record of the key where the data does not match the last extracted
+data, then all records of the key are included into the current extract.<span
+style="mso-spacerun: yes">  </span>If the records match exactly, then all
+records of the key are not included in the current extract (deleted).<span
+style="mso-spacerun: yes">  </span>Records of the extract having the same key
+are given the same change date using the maximum change date, with in the
+current set of extract records, for that key. </span></p>
+
+<span style='mso-bookmark:OLE_LINK3'></span>
+
+<h2><a name="_Toc95709025">Delete Dates</a></h2>
+
+<p class=BodyforHeading2>This enhancement contains corrections that assign date
+information related to record creation, as well as extraction date and user to
+delete records.</p>
+
+<h3><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h3>
+
+<h3><a name="_Toc95709026">Summary of changes</a></h3>
+
+<p class=BodyforHeading3>For all delete records within the current extract, the
+maximum create date and change date/time is collected from the archive data
+using key identifiers and applied to the delete record of the current
+extract.<span style="mso-spacerun: yes">  </span>Delete records are removed
+from the current extract where they already exist in the archive identified by
+key fields and having the same change date.</p>
+
+<h2><a name="_Toc95709027">Data Extract Form</a></h2>
+
+<p class=BodyforHeading2>An enhancement has added that allows for the reporting
+of the current status of an extraction when using the “Refresh” button from the
+Main Extraction screen.</p>
+
+<h3><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h3>
+
+<h3><a name="_Toc95709028">Summary of changes</a></h3>
+
+<p class=BodyforHeading3>The “Refresh” button was enhanced to display a more
+accurate summary status of the extraction.<span style="mso-spacerun: yes"> 
+</span>While any step within the extraction process is in Progress, that status
+will be reflected in the Summary Status field.<span style="mso-spacerun: yes"> 
+</span>When the process has completed, a final status of ‘Success’ or ‘Failure’
+will<span style="mso-spacerun: yes">  </span>appear within the summary field.</p>
+
+<h2><a name="_Toc95709029">Refresh Extract View Form</a> </h2>
+
+<p class=BodyforHeading2>This enhancement allows the Current study to follow
+the user from the Main Extraction screen to the Refresh View screen.</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always;
+mso-break-type:section-break'>
+</span></b>
+
+<div class=Section2>
+
+<h1><a name="_Toc95709030">Testing Results</a></h1>
+
+<h2><a name="_Toc95709031">Journaling</a></h2>
+
+<p class=BodyforHeading2>Patrick Conrad performed testing on February 3,
+2005.<span style="mso-spacerun: yes">  </span>Testing was performed on the
+OCDEV database and middle tier.<span style="mso-spacerun: yes">  </span>Below
+are the testing results for Journaling Testing.</p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes"> </span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 width=840 style='width:8.75in;
+ margin-left:23.4pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <thead>
+  <tr>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   background:silver;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Item</p>
+   </td>
+   <td width=504 valign=top style='width:5.25in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Steps</p>
+   </td>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Status</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Cursor Manipulation Screen</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>These tests are to be performed on the Data Extract Cursor
+  Manipulator form, accessed via the application menu under Extract Tools /
+  Extract Controls / Extract Cursor.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l20 level1 lfo11;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Check for existence of application menu on Cursor Form</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l20 level1 lfo11;
+  tab-stops:list .25in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>View Journal button: ensure button successfully calls the
+  Cursor Code Journal Form.<span style="mso-spacerun: yes">  </span>Use the
+  Close Window button to close the journal window.<span style="mso-spacerun:
+  yes">  </span>Use the Scroll bar to scroll down if the Close Window button is
+  not visible.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='background:silver;mso-highlight:silver'>NOTES:</span>
+  Pressing the View Journal button without first querying data results in a
+  message stating that a record must be retrieved first.<span
+  style="mso-spacerun: yes">  </span>Performing a query, then pressing the
+  button causes the Cursor Code Journal form to appear correctly.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l20 level1 lfo11;
+  tab-stops:list .25in'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Comment button: ensure that the button causes the “Cursor
+  Code Comment Needed” window to pop up.<span style="mso-spacerun: yes"> 
+  </span>Use the Cancel button to close the window.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><a name="OLE_LINK2"><span style='background:silver;
+  mso-highlight:silver'>NOTES:</span> Pressing the Comment button without first
+  querying data results in a message stating that a record must be retrieved
+  first.<span style="mso-spacerun: yes">  </span>Performing a query, then
+  pressing the button causes the correct window to appear.</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>View Manipulation Screen</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>These tests are to be performed on the Data Extract View
+  Code form, accessed via the application menu under Extract Tools / Extract
+  Controls / Extract Views.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo12;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Check for existence of application menu on View Form</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo12;
+  tab-stops:list .25in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>View Journal button: ensure button successfully calls the
+  Cursor Code Journal Form.<span style="mso-spacerun: yes">  </span>Use the
+  Close Window button to close the journal window.<span style="mso-spacerun:
+  yes">  </span>Use the Scroll bar to scroll down if the Close Window button is
+  not visible.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='background:silver;mso-highlight:silver'>NOTES:</span>
+  Pressing the View Journal button without first querying data results in a
+  message to appear stating that a record must be retrieved first.<span
+  style="mso-spacerun: yes">  </span>Performing a query, then pressing the
+  button causes the View Code Journal form to appear correctly.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 rowspan=2 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l3 level1 lfo12;
+  tab-stops:list .25in'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Comment button: ensure that the button causes the “Cursor
+  Code Comment Needed” window to pop up.<span style="mso-spacerun: yes"> 
+  </span>Use the Cancel button to close the window.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='background:silver;mso-highlight:silver'>NOTES:</span>
+  Pressing the Comment button without first querying data results in a message
+  stating that a record must be retrieved first.<span style="mso-spacerun:
+  yes">  </span>Performing a query, then pressing the button causes the correct
+  window to appear.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Process Changes</p>
+  <p class=MsoNormal>Cursor Screen</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>These
+  tests are to be performed on the Data Extract Cursor Manipulator form,
+  accessed via the application menu under Extract Tools / Extract Controls /
+  Extract Cursor.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l6 level1 lfo13;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Data Change on Cursor Screen causes mandatory comment
+  collection.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:.25in'><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>Query a record; traverse to a record that does not
+  have a Journal record, by moving through records, selecting the View Journal
+  button, until a Journal record is NOT found.<span style="mso-spacerun: yes"> 
+  </span>Close the Journal form, and make a change in any enterable data field
+  and traverse to a new record.<span style="mso-spacerun: yes">  </span>Ensure
+  that the Curse Code Comment Needed window is displayed. DO NOT ENTER A
+  COMMENT and continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l6 level1 lfo13;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>In the Comment Needed window, and press the Cancel button.<span
+  style="mso-spacerun: yes">  </span>Try to traverse to the next record.<span
+  style="mso-spacerun: yes">  </span>Ensure that the Comment Needed window
+  reappears with the original comment from above.<span style="mso-spacerun:
+  yes">  </span>DO NOT ENTER A COMMENT and continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l6 level1 lfo13;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>In the Comment Needed window, press the Continue button.<span
+  style="mso-spacerun: yes">  </span>Try to traverse to the next records.<span
+  style="mso-spacerun: yes">  </span>Ensure that the Comment Needed window
+  reappears with the original comment from above.<span style="mso-spacerun:
+  yes">  </span>DO NOT ENTER A COMMENT and Continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l6 level1 lfo13;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Enter a comment into the Comment Needed window, remove the comment
+  and press the Cancel button.<span style="mso-spacerun: yes">  </span>Ensure
+  that a comment is required.<span style="mso-spacerun: yes">  </span>DO NOT
+  ENTER A COMMENT and Continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l6 level1 lfo13;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Press the Continue button.<span style="mso-spacerun: yes"> 
+  </span>Ensure that a comment is required.<span style="mso-spacerun: yes"> 
+  </span>Enter a comment and press the Continue button.<span
+  style="mso-spacerun: yes">  </span>Press the Comment button to confirm the
+  comment entered is there.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'>Insert Record</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Insert Record (F6 Key; “Action/Record/Insert” from menu)
+  on Cursor Manipulation Screen causes mandatory comment collection.<span
+  style="mso-spacerun: yes">  </span></p>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l24 level1 lfo14;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>Query
+  a record; use “Insert Record” to create a new blank record.<span
+  style="mso-spacerun: yes">  </span>Use the Duplicate Field or Duplicate
+  Record key to populate screen (F3 or F4). <span style="mso-spacerun:
+  yes"> </span>Commit the record (F6) and ensure that a comment is required.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'>Delete Record</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Delete Record (“Action/Record/Remove”) on Cursor
+  Manipulation Screen causes mandatory comment collection.</p>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l7 level1 lfo15;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>Query
+  the record from above. Use “Delete Record” to remove the record. Ensure that
+  a comment is required.<span style="mso-spacerun: yes">  </span>Query the
+  table “CT_EXT_CRS_CTL$JN” where the JN_OPERATION = “DEL” to ensure that the
+  delete was recorded in the journal.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'><span style='background:silver;
+  mso-highlight:silver'>NOTES:</span> When deleting a record when only one
+  record is queried, a commit is usually performed.<span style="mso-spacerun:
+  yes">  </span>This commit will result in the form trying to commit 2 records,
+  the delete record, and the new blank record.<span style="mso-spacerun: yes"> 
+  </span>This should be addressed.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Process Changes</p>
+  <p class=MsoNormal>View Screen</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>These tests are to be performed on the Data
+  Extract Cursor Manipulator form, accessed via the application menu under
+  Extract Tools / Extract Controls / Extract View.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l8 level1 lfo25;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Data Change on Cursor Screen causes mandatory comment
+  collection.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:.25in'><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>Query a record; traverse to a record that does not
+  have a Journal record, by moving through records, selecting the View Journal
+  button, until a Journal record is NOT found.<span style="mso-spacerun: yes"> 
+  </span>Close the Journal form, and make a change in any enterable data field
+  and traverse to a new record.<span style="mso-spacerun: yes">  </span>Ensure
+  that the Curse Code Comment Needed window is displayed. DO NOT ENTER A
+  COMMENT and continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l8 level1 lfo25;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>In the Comment Needed window, and press the Cancel button.<span
+  style="mso-spacerun: yes">  </span>Try to traverse to the next record.<span
+  style="mso-spacerun: yes">  </span>Ensure that the Comment Needed window
+  reappears with the original comment from above.<span style="mso-spacerun:
+  yes">  </span>DO NOT ENTER A COMMENT and continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l8 level1 lfo25;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>In the Comment Needed window, press the Continue button.<span
+  style="mso-spacerun: yes">  </span>Try to traverse to the next records.<span
+  style="mso-spacerun: yes">  </span>Ensure that the Comment Needed window
+  reappears with the original comment from above.<span style="mso-spacerun:
+  yes">  </span>DO NOT ENTER A COMMENT and Continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l8 level1 lfo25;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Enter a comment into the Comment Needed window, remove the comment
+  and press the Cancel button.<span style="mso-spacerun: yes">  </span>Ensure
+  that a comment is required.<span style="mso-spacerun: yes">  </span>DO NOT
+  ENTER A COMMENT and Continue to next step.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l8 level1 lfo25;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt'>Press the Continue button.<span style="mso-spacerun: yes"> 
+  </span>Ensure that a comment is required.<span style="mso-spacerun: yes"> 
+  </span>Enter a comment and press the Continue button.<span
+  style="mso-spacerun: yes">  </span>Press the Comment button to confirm the
+  comment entered is there.<o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'>Insert Record</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Insert Record (F6 Key; “Action/Record/Insert” from menu)
+  on Cursor Manipulation Screen causes mandatory comment collection.<span
+  style="mso-spacerun: yes">  </span></p>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l5 level1 lfo16;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>Query
+  a record; use “Insert Record” to create a new blank record.<span
+  style="mso-spacerun: yes">  </span>Use the Duplicate Field or Duplicate
+  Record key to populate screen (F3 or F4).<span style="mso-spacerun: yes"> 
+  </span>Commit the record (F6) and ensure that a comment is required.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='text-align:right'>Delete Record</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Delete Record (“Action/Record/Remove”) on Cursor
+  Manipulation Screen causes mandatory comment collection.</p>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l12 level1 lfo17;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>Query
+  the record from above. Use “Delete Record” to remove the record. Ensure that
+  a comment is required.<span style="mso-spacerun: yes">  </span>Query the
+  table “CT_EXT_VW_CTL$JN” where the JN_OPERATION = “DEL” to ensure that the
+  delete was recorded in the journal.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'><span style='background:silver;
+  mso-highlight:silver'>NOTES:</span> When deleting a record when only one
+  record is queried, a commit is usually performed.<span style="mso-spacerun:
+  yes">  </span>This commit will result in the form trying to commit 2 records,
+  the delete record, and the new blank record.<span style="mso-spacerun: yes"> 
+  </span>This should be addressed.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Journaling Screen</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>New Screen Processing; Side by Side</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success; Notes</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=672 colspan=2 valign=top style='width:7.0in;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'><span style='background:silver;
+  mso-highlight:silver'>Notes:</span><span style="mso-spacerun: yes"> 
+  </span>The screen is too large to be placed side by side; you can however
+  place them in such a way as to see MOST information, by maximizing the
+  Application Window of Data Extract, “windowing” the Manipulator screen,
+  activating the Journaling Window and moving the Journaling window to the
+  right-bottom area.<span style="mso-spacerun: yes">  </span>Testing was
+  performed on screen with resolution of 1280 x 1024.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>This test can be performed with either the Cursor or View
+  Manipulation Screen and using either the <span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>“CT_EXT_VW_CTL$JN” or “CT_EXT_CRS_CTL$JN”
+  journaling table to identify records where journals exist.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>Query
+  Cursor or View records where journaling records are known to exist, and
+  select the “View Journal” button.<span style="mso-spacerun: yes"> 
+  </span>Ensure that the Journaling Screen appears with the appropriate data
+  (Journaling records related to the data queried on the Manipulator screen.</span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]>In the Journaling Window, ensure that the most recent
+  Journal Record is displayed first; records must be sorted in descending order
+  based upon Journal Date.<span style="mso-spacerun: yes">  </span>The record
+  count field (between User Name field and “Newer” button, shows the current
+  record number and total number of records. Ensure the “Older” button causes
+  the next most recent record to appear, etc.<span style="mso-spacerun: yes"> 
+  </span>Ensure that the “Newer” button causes more recent records to appear.<span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Select the Manipulator Window and Traverse through records
+  using either the Next/Previous Record keys or the Up/Down keys.<span
+  style="mso-spacerun: yes">  </span>Ensure that the Journaling Window displays
+  Journals for the corresponding records.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Keep both the Journaling and Manipulator windows open and
+  traverse to a record with the Manipulator window where there are several
+  Journaling Records.<span style="mso-spacerun: yes">  </span>Update the record
+  within the Manipulator window and commit changes; saving a comment in the
+  process.<span style="mso-spacerun: yes">  </span>Select the Journaling window
+  and press the “Execute Query” screen (F8).<span style="mso-spacerun: yes"> 
+  </span>Ensure that the comment just entered appears as the most recent
+  Journal Entry.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='margin-left:.25in;text-indent:-.25in;mso-list:l2 level1 lfo18;
+  tab-stops:list .25in'><![if !supportLists]>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Close the Journaling window using the “Close Window” button.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='tab-stops:.5in'>Success</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h2><a name="_Toc95709032">Ignored Updates</a></h2>
+
+<p class=BodyforHeading2>Patrick Conrad performed testing on February 8,
+2005.<span style="mso-spacerun: yes">  </span>Testing was performed on the
+OCDEV database and middle tier.<span style="mso-spacerun: yes">  </span>Below
+are the testing results for Journaling Testing.</p>
+
+<p class=BodyforHeading2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc95709033">Scripts and Useful SQL</a></h3>
+
+<p class=BodyforHeading3>Identify Script:<span style='mso-tab-count:1'>            </span>Used
+to identify target study where Ignored Updates exist.<span style="mso-spacerun:
+yes">  </span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt;mso-bidi-font-size:8.0pt;
+font-family:Courier'>SELECT protocol, file_id, count(*) Count <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt;mso-bidi-font-size:8.0pt;
+font-family:Courier'><span style="mso-spacerun: yes">  </span>FROM
+IGNORED_UPDATES_VW<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:8.0pt;font-family:Courier'><span style="mso-spacerun: yes"> 
+</span>group by protocol, file_id;</span><span style='font-size:8.0pt;
+font-family:Courier;color:black'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style="mso-spacerun:
+yes"> </span></p>
+
+<p class=BodyforHeading3>Combine Script:<span style='mso-tab-count:1'>         </span>Combines
+data from all source points, include Archive, Current Extract, Last Extract and
+Ignored Updates tables/Views:</p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>SELECT protocol, rectype
+Rtype, file_id, Extracted, changed, pt, del_flag, <o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>key1, key2, key3, key4, key5, data, data all_data<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>FROM IGNORED_UPDATES_VW<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span>where protocol = '&amp;study'<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>and rectype ='ignore_update'<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>and file_id = '&amp;file'<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>Union All<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>SELECT protocol,
+'prot_arch' Rtype, file_id, extracted, substr(line_text, 32,14) changed, pt,
+del_flag, <o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>key1, key2, key3, key4, key5, substr(line_text,95) data,
+line_text all_data<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>FROM CT_DATA a<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span>where submission_flag = 1<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.protocol = '&amp;study '<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.file_id = '&amp;file '<span style="mso-spacerun: yes"> 
+</span><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>union all<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>SELECT protocol,
+'prot_crrnt' Rtype, file_id, extracted, substr(line_text, 32,14) changed, pt,
+del_flag, <o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>key1, key2, key3, key4, key5, substr(line_text,95) data,
+line_text all_data<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>FROM CT_EXT_DATA a<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span>where submission_flag = 1<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.protocol = '&amp;study '<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.file_id = '&amp;file '<span style="mso-spacerun: yes"> 
+</span><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>union all<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>SELECT protocol,
+'prot_last' Rtype, file_id, extracted, substr(line_text, 32,14) changed, <o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>pt, del_flag, key1, key2, key3, key4, key5,
+substr(line_text,95) data, line_text all_data<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>FROM CT_DATA_LAST_EXT a<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span>where submission_flag = 1<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.protocol = '&amp;study '<o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and a.file_id = '&amp;file '<span style="mso-spacerun: yes"> 
+</span><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>order by pt, file_id,
+key1, key2, key3, rtype, extracted;</span><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black'><o:p></o:p></span></p>
+
+<p class=BodyforHeading3 style='margin-left:1.0in'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes"> </span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 width=840 style='width:8.75in;
+ margin-left:23.4pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <thead>
+  <tr>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   background:silver;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Item</p>
+   </td>
+   <td width=504 valign=top style='width:5.25in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Steps</p>
+   </td>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Status</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Identify Ignored Updates</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><a name="OLE_LINK4">Using the “Identify” script from
+  above, identify target study, one where there are several “Ignored Update”
+  Records. </a></p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Verify Ignored Updates</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Using the “Combine” script from above, compare the
+  “ignored_update” records against the “prot_arch”, “prot_crrnt” and
+  “prot_last” records.<span style="mso-spacerun: yes">  </span>In most cases,
+  and ignore update record is one section of a multiple key record where only
+  one record of the multiple record key update is reported, and the other part
+  is reported at a later time.<span style="mso-spacerun: yes">  </span>These
+  records then alternate between each other up to the current reporting period.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Execute Extract</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l4 level1 lfo19;
+  tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Perform an Extract for the Study Identified above, using the
+  Data Extract Utility.<span style="mso-spacerun: yes">  </span>As part of the
+  Extract process, the Last Extract may have to be removed.</p>
+  <p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;mso-list:l4 level1 lfo19;
+  tab-stops:list .25in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><![endif]>Use the “Combine” script again, and ensure that a complete
+  set of multiple key records are included in the current extract, identified
+  by the “prot_crrnt” RTYPE.</p>
+  <p class=MsoNormal><span style='background:silver;mso-highlight:silver'>NOTE:</span>
+  While performing this test, the “Refreshing the Data Extract Form” testing
+  can be performed.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc95709034">Delete Dates</a></h2>
+
+<p class=BodyforHeading2>Patrick Conrad performed testing on February 8,
+2005.<span style="mso-spacerun: yes">  </span>Testing was performed on the
+OCDEV database and middle tier.<span style="mso-spacerun: yes">  </span>Below
+are the testing results for Journaling Testing.</p>
+
+<p class=BodyforHeading2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc95709035">Scripts and Useful SQL</a></h3>
+
+<p class=BodyforHeading3>Identify Script:<span style='mso-tab-count:1'>            </span>Used
+to identify target study where delete dates are missing.</p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>SELECT protocol, file_id,<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">       </span>substr(Line_text,8,8) delete_date,<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span><span style="mso-spacerun: yes"> </span>substr(Line_text,16,8)
+delete_user,<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span><span style="mso-spacerun: yes"> </span>substr(Line_text,24,8)
+created_date,<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span><span style="mso-spacerun: yes"> </span>substr(Line_text,32,14)
+Change_date,<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span><span style="mso-spacerun: yes"> </span>substr(Line_text,48,8)
+Delete_Date2<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">  </span>FROM CT_EXT_DATA a<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span>where submission_flag = 1<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes">   </span>and del_flag = 'D';<o:p></o:p></span></p>
+
+<p class=BodyforHeading2 style='margin-left:1.0in'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 width=840 style='width:8.75in;
+ margin-left:23.4pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <thead>
+  <tr>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   background:silver;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Item</p>
+   </td>
+   <td width=504 valign=top style='width:5.25in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Steps</p>
+   </td>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Status</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Identify previous deletions</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Using the “Identify” script from above, identify target
+  study, one where there are several missing delete date Records.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Extract</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Extract the Study.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Check Results</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Execute the “Identify” script again and ensure that the
+  records from the fist step now show delete dates.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc95709036">Data Extract Form</a></h2>
+
+<p class=BodyforHeading2>Patrick Conrad performed testing on February 8,
+2005.<span style="mso-spacerun: yes">  </span>Testing was performed on the
+OCDEV database and middle tier.<span style="mso-spacerun: yes">  </span>Below
+are the testing results for Journaling Testing.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=1 cellspacing=0 cellpadding=0 width=840 style='width:8.75in;
+ margin-left:23.4pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <thead>
+  <tr>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   background:silver;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Item</p>
+   </td>
+   <td width=504 valign=top style='width:5.25in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Steps</p>
+   </td>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Status</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Perform Extract</p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Refresh enhancement allows to the current process
+  status to be displayed in the “Extract Status” section of the Extract
+  Form.<span style="mso-spacerun: yes">  </span>Every time the refresh button
+  is selected, the Status area displays the most recent status of each step executed.<span
+  style="mso-spacerun: yes">  </span>The summary field displays the current
+  summary status.<span style="mso-spacerun: yes">  </span>If any step is in
+  ‘Progress’ this value will be displayed.<span style="mso-spacerun: yes"> 
+  </span>Until the process is finished, this value will remain.<span
+  style="mso-spacerun: yes">  </span>Once the process copletes, the field will
+  display either a “Success” message or a “Failure” message.<span
+  style="mso-spacerun: yes">  </span>A success message signifies that every
+  step of the process was successful, while a failure message signifies that at
+  least one step of the entire process did not complete as expected.<span
+  style="mso-spacerun: yes">  </span>Ensure that repeatedly pressing the
+  “Refresh” button during an extract will progress from a “Progress” summary
+  status to either a “Success” or “Failure” summary status.<span
+  style="mso-spacerun: yes">  </span>The actual status can be check be
+  scrolling through the individual step statuses.</p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc95709037">Refresh Extract View Form</a> </h2>
+
+<p class=BodyforHeading2>Patrick Conrad performed testing on February 8, 2005.<span
+style="mso-spacerun: yes">  </span>Testing was performed on the OCDEV database
+and middle tier.<span style="mso-spacerun: yes">  </span>Below are the testing
+results for Journaling Testing.<span style='font-size:10.0pt;font-family:Arial'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<table border=1 cellspacing=0 cellpadding=0 width=840 style='width:8.75in;
+ margin-left:23.4pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <thead>
+  <tr>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   background:silver;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Item</p>
+   </td>
+   <td width=504 valign=top style='width:5.25in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Steps</p>
+   </td>
+   <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;background:silver;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=MsoNormal>Status</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Call Refresh Extract Views Form</p>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=504 valign=top style='width:5.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>From the Main Extract form, enter a study into the Study
+  Field.<span style="mso-spacerun: yes">  </span>Use the application menu to
+  call the Refresh Extract View form (Extract Tools / Refresh Extract
+  Views).<span style="mso-spacerun: yes">  </span>Ensure that the study entered
+  into the field on the Main Extract form is populated into the Study field of
+  the Refresh Extract Views form. </p>
+  </td>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Success</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always;
+mso-break-type:section-break'>
+</span></b>
+
+<div class=Section3>
+
+<h1><a name="_Toc95709038">Testing Summary</a></h1>
+
+<p class=BodyforHeading2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc95709039">Extract Journaling</a></h2>
+
+<p class=BodyforHeading2>Deploy. Works as designed.<span style="mso-spacerun:
+yes">  </span>Users should be instructed on the use of Journaling and placing
+comments. </p>
+
+<h2><a name="_Toc95709040">Ignored Updates</a></h2>
+
+<p class=BodyforHeading2>Deploy. Works as designed.<span style="mso-spacerun:
+yes">  </span>Before testing on LIVE data, the view IGNORED_UPDATES_VW must be
+rebuilt, to include the most recent set of ignored update records. </p>
+
+<h2><a name="_Toc95709041">Delete Dates</a></h2>
+
+<p class=BodyforHeading2>Deploy. Works as designed.</p>
+
+<h2><a name="_Toc95709042">Data Extract Form</a></h2>
+
+<p class=BodyforHeading2>Deploy. Works as designed.<span style="mso-spacerun:
+yes">  </span>Users should be instructed on what to expect from the enhanced
+“refresh” feature.</p>
+
+<h2><a name="_Toc95709043">Refresh Extract View Form</a></h2>
+
+<p class=BodyforHeading2>Deploy. Works as designed.<span style="mso-spacerun:
+yes">  </span>Users should be instructed on how to take advantage of this
+feature. </p>
+
+<p class=BodyforHeading2><span style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><a name="_Toc95709044">Deployment Recommendation</a></h1>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>Deploy to production.<span style="mso-spacerun: yes"> 
+</span></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h1><a name="_Toc95709045">Additional Documents</a></h1>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>IgnoredUpdateTesting_20050208.xls</p>
+
+<p class=MsoBodyTextIndent>Contains before and after data samples showing
+ignored updates and there usage after the enhancement.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal>DeleteDate_Testing20050209.xls</p>
+
+<p class=MsoBodyTextIndent>Contains before and after data sample for delete
+dates.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="indexAction" class="gov.nih.nci.c3dextract.action.IndexAction" />
+
+	<bean id="loginAction" class="gov.nih.nci.c3dextract.action.LoginActionImpl" />
+
+	<bean id="getExtractStudies" class="gov.nih.nci.c3dextract.action.GetExtractStudies" />
+
+	<bean id="getControlData" class="gov.nih.nci.c3dextract.action.GetControlData" />
+
+	<bean id="getCursors" class="gov.nih.nci.c3dextract.action.GetCursors" />
+
+	<bean id="getViews" class="gov.nih.nci.c3dextract.action.GetViews" />
+
+	<bean id="getValidUsers" class="gov.nih.nci.c3dextract.action.GetValidUsers" />
+
+	<bean id="addValidUser" class="gov.nih.nci.c3dextract.action.AddValidUser" />
+
+	<bean id="deleteValidUser" class="gov.nih.nci.c3dextract.action.DeleteValidUser" />
+
+	<bean id="deleteStudyControl" class="gov.nih.nci.c3dextract.action.DeleteStudyControl" />
+
+	<bean id="deleteReportControl" class="gov.nih.nci.c3dextract.action.DeleteReportControl" />
+
+	<bean id="deleteObjectControl" class="gov.nih.nci.c3dextract.action.DeleteObjectControl" />
+
+	<bean id="deleteFileControl" class="gov.nih.nci.c3dextract.action.DeleteFileControl" />
+
+	<bean id="deleteCursor" class="gov.nih.nci.c3dextract.action.DeleteCursor" />
+
+	<bean id="deleteView" class="gov.nih.nci.c3dextract.action.DeleteView" />
+
+	<bean id="updateStudyControl" class="gov.nih.nci.c3dextract.action.UpdateStudyControl" />
+
+	<bean id="updateReportControl" class="gov.nih.nci.c3dextract.action.UpdateReportControl" />
+
+	<bean id="updateObjectControl" class="gov.nih.nci.c3dextract.action.UpdateObjectControl" />
+
+	<bean id="updateFileControl" class="gov.nih.nci.c3dextract.action.UpdateFileControl" />
+
+	<bean id="updateCursor" class="gov.nih.nci.c3dextract.action.UpdateCursor" />
+
+	<bean id="updateView" class="gov.nih.nci.c3dextract.action.UpdateView" />
+
+	<bean id="getAvailableStudies" class="gov.nih.nci.c3dextract.action.GetAvailableStudies" />
+	
+	<bean id="getTemplateStudies" class="gov.nih.nci.c3dextract.action.GetTemplateStudies" />
+
+	<bean id="getExtractStudyReportTos" class="gov.nih.nci.c3dextract.action.GetExtractStudyReportTos" />
+
+	<bean id="getExtractStudyReportToVersions" class="gov.nih.nci.c3dextract.action.GetExtractStudyReportToVersions" />
+
+	<bean id="getExtractDates" class="gov.nih.nci.c3dextract.action.GetExtractDates" />
+
+	<bean id="getExtractStatus" class="gov.nih.nci.c3dextract.action.GetExtractStatus" />
+
+	<bean id="getExtractErrors" class="gov.nih.nci.c3dextract.action.GetExtractErrors" />
+
+	<bean id="getAllStatuses" class="gov.nih.nci.c3dextract.action.GetAllStatuses" />
+        
+        <bean id="removeArchiveAction" class="gov.nih.nci.c3dextract.action.RemoveArchiveAction" />
+        
+        <bean id="transferToArchiveAction" class="gov.nih.nci.c3dextract.action.TransferToArchiveAction" />
+
+        <bean id="createExtractAction" class="gov.nih.nci.c3dextract.action.CreateExtractAction" />
+
+        <bean id="createFilesAction" class="gov.nih.nci.c3dextract.action.CreateFilesAction" />
+
+        <bean id="getExtractStatusFull" class="gov.nih.nci.c3dextract.action.GetExtractStatusFull" />
+
+        <bean id="getExtractErrorsFull" class="gov.nih.nci.c3dextract.action.GetExtractErrorsFull" />
+
+        <bean id="validateStudyDef" class="gov.nih.nci.c3dextract.action.ValidateStudyDef" />
+        
+        <bean id="setStudyCtrl" class="gov.nih.nci.c3dextract.action.SetStudyCtrl" />
+
+        <bean id="buildExtSchema" class="gov.nih.nci.c3dextract.action.BuildExtSchema" />
+
+        <bean id="setReportCtrl" class="gov.nih.nci.c3dextract.action.SetReportCtrl" />
+
+        <bean id="setViewCtrl" class="gov.nih.nci.c3dextract.action.SetViewCtrl" />
+
+        <bean id="genLabOther" class="gov.nih.nci.c3dextract.action.GenLabOther" />
+
+        <bean id="createStudyVw" class="gov.nih.nci.c3dextract.action.CreateStudyVw" />
+
+        <bean id="createStudyOCSyn" class="gov.nih.nci.c3dextract.action.CreateStudyOCSyn" />
+
+        <bean id="setCrsCtrl" class="gov.nih.nci.c3dextract.action.SetCrsCtrl" />
+
+        <bean id="setFileCtrl" class="gov.nih.nci.c3dextract.action.SetFileCtrl" />
+        
+        <bean id="cursorJournal" class="gov.nih.nci.c3dextract.action.CursorJournal" />        
+
+        <bean id="viewJournal" class="gov.nih.nci.c3dextract.action.ViewJournal" />        
+</beans>

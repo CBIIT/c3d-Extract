@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+    <package name="c3dDataExtract" namespace="/" extends="struts-default,json-default">
+       <interceptors>
+        	
+        	<interceptor-stack name="secureStack">  
+                	<interceptor-ref name="defaultStack" />  
+                </interceptor-stack> 
+            
+        	<interceptor-stack name="insecureStack">  
+                	<interceptor-ref name="defaultStack" />  
+        	</interceptor-stack> 
+            
+        </interceptors>
+        
+        <default-interceptor-ref name="secureStack" />
+        
+        <default-action-ref name="index"/>
+
+        <global-results>
+            <result name="login">/pages/login.jsp</result>
+            <result name="login-success">/pages/index.jsp</result>
+        </global-results>
+
+        <action name="Login" class="loginAction" method="login">
+            <result name="login-success">/pages/extractPrimary.jsp</result>
+            <result name="input">/pages/login.jsp</result>
+        </action>
+        
+        <action name="logout" class="loginAction" method="logout">
+        </action>
+
+        <action name="getValidUsers" class="getValidUsers" method="validUsers">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="addValidUser" class="addValidUser" method="addValidUser">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="deleteValidUser" class="deleteValidUser" method="deleteValidUser">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractStudies" class="getExtractStudies" method="extractStudies">
+            <!--<interceptor-ref name="basicStack"></interceptor-ref>-->
+            <result type="json"/>
+        </action>
+        
+        <action name="delStudy" class="deleteStudyControl" method="deleteStudyControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="delReport" class="deleteReportControl" method="deleteReportControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="delObject" class="deleteObjectControl" method="deleteObjectControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="delFile" class="deleteFileControl" method="deleteFileControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="delCursor" class="deleteCursor" method="deleteCursor">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="delView" class="deleteView" method="deleteView">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="updStudy" class="updateStudyControl" method="updateStudyControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="updReport" class="updateReportControl" method="updateReportControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="updObject" class="updateObjectControl" method="updateObjectControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="updFile" class="updateFileControl" method="updateFileControl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="updCursor" class="updateCursor" method="updateCursor">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="updView" class="updateView" method="updateView">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getControlData" class="getControlData" method="controlData">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getCursors" class="getCursors" method="cursors">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getViews" class="getViews" method="views">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getAvailableStudies" class="getAvailableStudies" method="availableStudies">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getTemplateStudies" class="getTemplateStudies" method="templateStudies">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractStatus" class="getExtractStatus" method="extractStatus">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractErrors" class="getExtractErrors" method="extractErrors">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractStudyReportTos" class="getExtractStudyReportTos" method="extractStudyReportTos">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractStudyReportToVersions" class="getExtractStudyReportToVersions" method="extractStudyReportToVersions">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getExtractDates" class="getExtractDates" method="extractDates">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="getAllStatuses" class="getAllStatuses" method="allStatuses">
+	            <interceptor-ref name="basicStack"></interceptor-ref>
+	            <result type="json"/>
+	</action>
+        
+        <action name="getExtractStatusPage" class="getExtractStatusFull">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/runDetail.jsp</result>
+	</action>
+
+        <action name="getExtractStatusFull" class="getExtractStatusFull" method="extractStatusFull">
+	            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+	</action>
+        
+        <action name="getExtractErrorPage" class="getExtractErrorsFull">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/errorDetail.jsp</result>
+	</action>
+
+        <action name="getExtractErrorsFull" class="getExtractErrorsFull" method="extractErrorsFull">
+	            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+	</action>
+
+        <action name="removeArchiveAction" class="removeArchiveAction" method="removeArchiveAction">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="transferToArchiveAction" class="transferToArchiveAction" method="transferToArchiveAction">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="createExtractAction" class="createExtractAction" method="createExtractAction">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="createFilesAction" class="createFilesAction" method="createFilesAction">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+        
+        <action name="validateStudyDef" class="validateStudyDef" method="validateStudyDef">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="setStudyCtrl" class="setStudyCtrl" method="bldStudyCtrl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="buildExtSchema" class="buildExtSchema" method="buildExtSchema">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="setReportCtrl" class="setReportCtrl" method="bldReportCtrl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="setViewCtrl" class="setViewCtrl" method="bldViewCtrl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="genLabOther" class="genLabOther" method="genLabOther">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="createStudyVw" class="createStudyVw" method="createStudyVw">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="createStudyOCSyn" class="createStudyOCSyn" method="createStudyOCSyn">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="setCrsCtrl" class="setCrsCtrl" method="bldCrsCtrl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="setFileCtrl" class="setFileCtrl" method="bldFileCtrl">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result type="json"/>
+        </action>
+
+        <action name="showFilesAction">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/dataFiles.jsp</result>
+        </action>
+
+        <action name="goExtractPage">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/extractPrimary.jsp</result>
+        </action>
+        
+        <action name="goAddStudyPage">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/addAStudy.jsp</result>
+        </action>
+
+        <action name="goRefreshViewsPage">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/refreshViews.jsp</result>
+        </action>
+
+        <action name="goSecurityPage">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/security.jsp</result>
+        </action>
+
+        <action name="goControlsPage">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/controlTables.jsp</result>
+        </action>
+
+        <action name="goCursorsPage" class="cursorJournal" >
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/cursors.jsp</result>
+        </action>
+
+        <action name="goViewsPage" class="viewJournal">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/views.jsp</result>
+        </action>
+        
+        <action name="goCursorJournalPage" class="cursorJournal" >
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/cursorJournal.jsp</result>
+        </action>
+
+        <action name="cursorJournal" class="cursorJournal"  method="cursorJournal">
+	    <interceptor-ref name="basicStack"></interceptor-ref>
+	    <result type="json"/>
+	</action>
+
+        <action name="goViewJournalPage" class="viewJournal" >
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <result>/pages/viewJournal.jsp</result>
+        </action>
+
+        <action name="viewJournal" class="viewJournal"  method="viewJournal">
+	    <interceptor-ref name="basicStack"></interceptor-ref>
+	    <result type="json"/>
+	</action>
+
+	<action name="index" class="indexAction"/>
+        
+    </package>
+
+</struts>

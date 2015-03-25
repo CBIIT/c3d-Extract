@@ -1,0 +1,62 @@
+Data Extract UI
+Things still needed.
+
+Screen ANalysis Needed.
+
+ C  1) Login Screen
+	a) After successful connection, application determines if user is authorized to run the app.
+	   This is done by checking the CT_EXT_ACCOUNTS table for the userid.
+X   2) EXTCRS01
+X	a) Analysis needed
+X   3) EXTCTL01
+X	a) Analysis needed
+XC  4) EXTRACT2
+X      Analysis Needed
+XC  5) EXTSET01
+X	a) Analysis needed
+X   6) EXTSET02
+X	a) Analysis needed
+    7) EXTview02
+	a) Analysis needed
+XC  8) EXTMENU1
+X	a) Analysis needed
+
+
+Java Code
+    1) Use CDE Loader UI directory/code as starting point for Data Extract UI
+
+The menu system will need looked into.  There is a site that shows 
+how to create cascading menus using CSS.
+
+http://demo.raibledesigns.com/struts-menu/cssHorizontal.jsp
+http://demo.raibledesigns.com/struts-menu/cssVertical.jsp
+
+Screen Development Needed:
+X   1) Login Screen
+X   2) Main Landing page and primary execution Page (EXTRACT02)
+       a) Need to check to see if extraction is running when the Create Extract button is pressed FIRST, 
+          before doing anything else.
+          
+    3) Security Detail Screen (From Menu Item "Security")
+X   4) Extract Status Detail Screen (Link from Primary Page)
+X   5) Error Status Detail Screen (Link from Primary Page)
+X   6) Add New Study Screen (From Menu)
+    7) Refresh Extract Views Screen (From Menu)
+    8) Control Table Screen (From Menu)
+    9) Extract Views Screen(From Menu)
+   10) Extract Journal Screen (Link From Extract Views Screen)
+   11) Cursor Screen (From Menu)
+   12) Cursor Journal Screen (Link from Cursor Screen)
+X   a) File Download Page
+  
+
+Actions:
+    1) Login
+    2) Need actions for the following LOVs
+	a) Get all defined Studies
+	b) Get all Studies
+	c) Get all Defined Study/ReportTo/Versions
+
+    3) 
+	
+

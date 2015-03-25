@@ -1,0 +1,35 @@
+Refresh Views
+
+[NOTE: X - Passed Test; N - Failed; M - Possible Failure]
+
+Validation Testing
+	
+	No values picked, hit create button	X - All appropriate validate errors occur
+	Good Study, others not picked		X - All appropriate validate errors occur
+	Good Studies, other not picked		X - All appropriate validate errors occur
+	Good Studies,Report to, others not	X - All appropriate validate errors occur
+	Only Reportas and MRN blank		X - All appropriate validate errors occur
+	Only MRN blank				X - All appropriate validate errors occur
+	Various combinations of good/bad	X - All appropriate validate errors occur
+
+NOTE: When selecting study previous created, but deleted, the astericks is removed correctly
+	
+	
+
+Initial Refresh
+
+	_EXT views created		X
+
+supplemental checking, 
+
+1) Delete all views
+
+	DELETE _EXT views 		Y
+
+2) Refresh Study Views
+
+	_EXT views created		Y 
+
+
+
+Testing Successful
